@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<p>zhihu</p>
+
+<script>
+axios.get('https://zhihu-daily.leanapp.cn/api/v1/last-stories')
+  .then(function (response) {
+  var arr=[];
+  var txt = response.data.STORIES.stories;
+  for(var i =0;i < txt.length;i++) {
+      arr.push("<p>" + txt[i].title + "</p>");
+  }
+  document.write(arr);
+  console.log(response.data.STORIES.stories[0].id)
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+</script>
+</body>
+</html>

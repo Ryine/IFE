@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BFC</title>
+    <style>
+
+.container{
+  width:700px;
+  border:1px solid #000;
+}
+.cell{
+  padding-right:10px;
+  display: table-cell; 
+  *display: inline-block; 
+  *width: auto;
+}
+
+
+
+.content {
+        
+        padding: 10px;
+        border: 2px solid #999;
+    }
+
+    .content div {
+        display: inline-block;
+        vertical-align: middle;
+        border: 2px solid #999;
+    }
+
+
+    </style>
+</head>
+<body>
+        <div class="container">
+                <div class ="cell">float:left 浮动元素本身BFC化，然而浮动元素有破坏性和包裹性，失去了元素本身的流体自适应性，因此，无法用来实现自动填满容器的自适应布局。不过，其因兼容性还算良好，与堆积木这种现实认知匹配，上手简单，因此在旧时代被大肆使用，也就是常说的“浮动布局”，也算阴差阳错开创了自己的一套布局。</div>
+                <div class ="cell">position:absolute 这个脱离文档流有些严重，过于清高，不跟普通小伙伴玩耍，我就不说什么了……</div>
+                <div class ="cell">overflow:hidden 这个超棒的哦！不像浮动和绝对定位，玩得有点过。也就是溢出剪裁什么的，本身还是个很普通的元素。因此，块状元素的流体特性保存相当完好，附上BFC的独立区域特性，可谓如虎添翼，宇宙无敌！哈无诶瓦(However), 就跟清除浮动：</div>
+                <div class ="cell">display:inline-block CSS届最伟大的声明之一，但是，在这里，就有些捉襟见肘了。display:inline-block会让元素尺寸包裹收缩，完全就不是我们想要的block水平的流动特性。唉，只能是一声叹气一枪毙掉的命！然而，峰回路转，世事难料。大家应该知道，IE6/IE7浏览器下，block水平的元素设置display:inline-block元素还是block水平，也就是还是会自适应容器的可用宽度显示。于是，我们就阴差阳错得到一个比overflow:hidden更牛逼的声明，即BFC特性加身，又流体特性保留。</div>
+                <div class ="cell">display:table-cell 让元素表现得像单元格一样，IE8+以上浏览器才支持。跟display:inline-block一样，会跟随内部元素的宽度显示，看样子也是不合适的命。但是，单元格有个非常神奇的特性，就是你宽度值设置地再大，大到西伯利亚，实际宽度也不会超过表格容器的宽度。</div>
+        </div>
+        <div class="content">
+                <div style="padding: 50px 40px;background: #cccccc;color: #fff;"></div>
+                <div style="padding: 60px 40px;background: #639146;color: #fff;"></div>
+                <div style="padding: 70px 40px;background: #2B82EE;color: #fff;"></div>
+                <div style="padding: 80px 40px;background: #F57900;color: #fff;"></div>
+                <div style="padding: 90px 40px;background: #BC1D49;color: #fff;"></div>
+            </div>
+            
+            
+</body>
+</html>

@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>技术产品官网</title>
+    <style>
+        *
+        {
+            padding: 0;
+            margin: 0;
+        }
+        .container
+        {
+            min-width: 1280px;
+            font-family: SimHei;
+            background: #fff;
+        }
+        /*导航栏*/
+        header
+        {
+            height: 60px;  
+        }
+        .logo
+        {
+            float: left;
+            height: 60px;
+            margin-left: 60px; 
+            font-size: 21px;
+            color: #393a3a; 
+        }
+        .logo img
+        {
+            vertical-align: middle;     
+        }
+        .logo span
+        {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+        nav
+        {
+            float: right;
+            margin-right: 14px;
+        }
+        nav li
+        {
+            float: left;
+            list-style-type: none;  
+        }
+        nav a
+        {
+            display: block;
+            height: 60px;
+            width: 100px;
+            font: 14px MicrosoftYaHei;
+            text-align: center;
+            line-height: 60px;
+            color: #787b83;
+            text-decoration: none;  
+        }
+        nav a:hover,nav a:active
+        {
+            border-bottom: 3px solid #ea6b60;
+        }
+        nav img
+        {
+            height: 14px;
+        }
+        .banner 
+        {
+            height: 690px;
+            font-family: MicrosoftYaHei;
+            background-image: url("./images/banner.jpg");
+            background-size: cover;
+        }
+        .banner p:nth-child(1)
+        {
+            padding-top: 230px;
+            padding-left: 117px;
+            font-size: 60px;
+            color: #fff;
+        }
+        .banner p:nth-child(2)
+        {
+            width: 300px;
+            padding-top: 30px;
+            padding-left: 117px;
+            line-height: 30px;
+            font-size: 21px;
+            color: #fffdfd;      
+        }
+        .banner p:nth-child(3)
+        {
+            width: 331px;
+            height: 65px;
+            margin-top: 66px;
+            margin-left: 117px;
+            font-size: 30px;
+            line-height: 65px;
+            text-align: center;
+            background: #e74f4d;
+        }
+        .banner a
+        {
+            color: #fff;
+            text-decoration: none;
+        }
+        .feature
+        {
+            height: 250px;
+            font-size: 14px;
+            color: #767777; 
+        }
+        .feature div
+        {
+            float: left;
+            width: 25%;  
+            text-align: center;    
+        }
+        .feature p
+        {
+            display: inline-block;
+            width: 154px;
+            margin-top: 46px; 
+        }
+        .feature img
+        {
+            margin-top: 45px; 
+        }
+        .feature hr
+        {
+            float: right;
+            width: 2px;
+            height: 52px;
+            margin-top: 48px;
+            border: none;
+            background: #767777;
+            opacity: 0.5;
+        }
+        .about
+        {
+            height: 361px;
+            text-align: center;
+            background: #edeaea;
+        }
+        .about p
+        {
+            display: inline-block;
+            margin-top: 48px;
+            font-size: 54px;
+            color: #323333;
+            opacity: 0.5;
+        }
+        .about img
+        {
+            margin-top: 89px;
+        }
+        .search
+        {
+            height: 341px;
+            font-family: MicrosoftYaHei;
+            color: #fff;
+            background-image: url(./images/map.png);
+            background-size: cover;
+            
+            
+        }
+        .search p
+        {
+            margin: 0 auto;     
+        }
+        .search p:nth-child(1)
+        {
+            padding-top: 53px;
+            width: 231px;
+            font-size: 21px;
+        }
+        .search p:nth-child(2)
+        {
+            margin-top: 10px;
+            width: 31px;
+            height: 3px;
+            background: #fff;
+        }
+        .search p:nth-child(3)
+        {
+            padding-top: 19px;
+            width: 337px;
+            font-size: 12px;
+        }
+        .search form
+        {
+            font-size: 12px;
+            color: #a8aaaa;
+            text-align: center;
+        }
+        .search select
+        {
+            width: 236px;
+            height: 36px;
+        }
+        .activity 
+        {
+            width: 100%;
+            height: 600px;
+            text-align: center;
+            background: #edeaea;
+        }
+        .activity div
+        {
+            display: inline-block;
+            margin: 20px;
+            margin-top: 90px;
+        }
+        .activity figure
+        {
+            padding: 14px 8px;
+            border: 1px solid #e1dedc;
+            background: #fff;
+        }
+        .activity div p:nth-of-type(2)
+        {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-size: 12px;
+            color: #b3adac;
+        }
+        .city
+        {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #44403f;
+        }
+        .shanghai
+        {
+            margin-top: 10px;
+            margin-left: 15px;
+            letter-spacing: 30px;
+            font-size: 24px;
+            color: #44403f;
+        }
+        .foot
+        {
+            float: left;
+            width: 66%;
+            height: 566px;
+            text-align: center;
+            background: url(./images/foot.png) no-repeat;
+            background-size: cover;
+        }
+        .world
+        {
+            position: relative;
+            top: 95px;
+            
+            font-family: MicrosoftYaHei;
+            color: #fff;
+        }
+        .world p:nth-child(1)
+        {
+            margin-top: 30px;
+            font-size: 49px;
+        }
+        .world p:nth-child(2)
+        {
+            position: relative;
+            top: -40px;
+            font-size: 158px;
+            
+        }
+        .world p:nth-child(3)
+        {
+            position: relative;
+            top: -50px;
+            font-size: 22px;
+        }
+        .world p:nth-child(4)
+        {
+            position: relative;
+            top: -30px;
+            font-size: 22px;
+        }
+        .tab
+        {
+            height: 566px;
+            text-align: center;
+        }
+        .box
+        {
+            height: 437px;
+            overflow: hidden;
+        }
+        .box div
+        {
+            width: 288px;
+            height: 437px;
+            margin: 0 auto;
+            padding-top: 165px;
+        }
+        .box div p:nth-child(1)
+        {
+            font-size: 20px;
+        }
+        .box div span
+        {
+            color: #e84e4c;
+        }
+        .box div p:nth-child(2)
+        {
+            padding-top: 31px;
+            line-height: 30px;
+            font-size: 12px;
+            color: #aaa;
+            text-align: left;
+            
+        }
+        .box div a
+        {
+            display: inline-block;
+            width: 107px;
+            height: 35px;
+            margin-top: 49px;
+            line-height: 35px;
+            font-size: 13px;
+            color: #e84e4c;
+            border: 1px solid #e84e4c;
+            text-decoration: none;
+        }
+        .anchor a
+        {
+            display: inline-block;
+            width: 11px;
+            height: 11px;
+            margin-top: 10px;
+            border-radius: 50%;
+            border: 1px solid #767777;
+        }
+        .anchor a:hover,.anchor a:active
+        {
+            background: #767777;
+        }
+        .left
+        {
+            display: table;
+            float: left;
+            width: 33%;
+            height: 521px;
+            font-size: 21px;
+            color: #fff;
+            text-align: center;
+            background: #e84e4c;
+        }
+        .left div
+        {
+            display: table-cell;
+            vertical-align: middle;
+            
+        }
+        .right
+        {
+            display: table;
+            float: left;
+            width: 33%;
+            height: 521px;
+            font-size: 21px;
+            color: #323333;
+            text-align: center;
+        }
+        .right div
+        {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .left div p:nth-of-type(2)
+        {
+            margin-top: 8px;
+            margin-bottom: 23px;
+        }
+        .right div p:nth-of-type(2)
+        {
+            margin-top: 8px;
+            margin-bottom: 23px;
+        }
+        .left div p:nth-of-type(3)
+        {
+            width: 31px;
+            height: 3px;
+            margin: 0 auto;
+            margin-bottom: 25px;
+            background: #fff;
+            
+        }
+        .right div p:nth-of-type(3)
+        {
+            width: 31px;
+            height: 3px;
+            margin: 0 auto;
+            margin-bottom: 25px;
+            background: #767777;
+            opacity: 0.5;
+        }
+        .more a
+        {
+            display: inline-block;
+            width: 170px;
+            height: 44px;
+            border: 1px solid #fff;
+            color: #fff;
+            line-height: 44px;
+            text-decoration: none;
+        }
+        .right a
+        {
+            color: #e84e4c;
+            border: 1px solid #e84e4c;
+        }
+        .img
+        {
+            height: 521px;
+            margin-left: 66%;
+            background: url(./images/train.png) no-repeat;
+            background-size: cover;
+        }
+        .join
+        {
+            height: 749px;
+            text-align: center;
+            
+        }
+        .joinus
+        {
+            position: relative;
+            top: 115px;
+            width:32%;
+            height: 195px;
+            margin: 0 auto;
+            margin-bottom: 106px;
+            text-align: center;
+        }
+        .joinus P:nth-of-type(1)
+        {
+            font: 21px Microsoft YaHei;
+            color: #323333;
+        }
+        .joinus p:nth-of-type(2)
+        {
+            font-size: 12px;
+            color: #aaa;
+        }
+        .joinus div
+        {
+            width: 31px;
+            height: 3px;
+            margin: 0 auto;
+            margin-top: 11px;
+            margin-bottom: 14px;
+            background: #e84e4c;
+        }
+        .provision
+        {
+            position: relative;
+            top: 20px;
+            display: inline-block;
+            width: 22%;
+            text-align: left;
+        }
+        .provision div:nth-child(1)
+        {
+            margin-bottom: 27px;
+        }
+        .volunteer
+        {
+            font-size: 14px;
+            color: #232815;
+        }
+        .more-bottom
+        {
+            font-size: 14px;
+            color: #232815;
+        }
+        .provision p
+        {
+            font: 12px SimSun;
+            color: #aaa;
+            line-height: 21px;
+        }
+        .provision img
+        {
+            position: relative;
+            top: 3px;
+            
+        }
+        .more-pro
+        {
+            
+            text-align: right;
+        }
+        .join form
+        {
+            display: inline-block;
+            width: 50%;
+            font: 12px SimSun;
+            color: #231815;
+            margin-left: 75px;
+        }
+        .join input,.join textarea,.join button
+        {
+            background: #ecedee;
+            border: none;
+            border-radius: 3px;
+        }
+        .join input
+        {
+            width: 47%;
+            height: 41px;
+            margin-bottom: 13px;
+            padding-left: 10px;   
+        }
+        .join textarea
+        {
+            width: 97%;
+            height: 121px;
+            margin-bottom: 13px;
+            padding-left: 10px;
+            padding-top: 10px;
+        }
+        .join button
+        {
+            width: 100%;
+            height: 41px;
+            font: 14px SimHei;
+            color: #233333;
+        }
+        .contact-us
+        {
+            display: table;
+            width: 100%;
+            height: 361px;
+            color: #fff;
+            background: #33363f;
+        }
+        .contact-us div
+        {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .contact-us p:nth-child(1)
+        {
+            font-size: 21px;
+            line-height: 49px;
+        }
+        .contact-us p:nth-child(2)
+        {
+            font: 12px SimSun;
+            line-height: 18px;
+        }
+        .contact-us input
+        {
+            width: 431px;
+            height: 41px;
+            margin-top: 30px;
+            margin-bottom: 37px;
+            padding-left: 10px;
+            border: none;
+            font: 14px MicrosoftYaHei;
+        }
+        .contact-us button
+        {
+            width: 81px;
+            height: 41px;
+            margin-left: -10px;
+            border: none;
+            font: 15px MicrosoftYaHei;
+            color: #fff;
+            background: #75757f;
+        }
+        .contact-us img
+        {
+            padding: 10px;
+        }
+        footer
+        {
+            width: 100%;
+            height: 55px;
+            background: #30303a;
+            color: #fff;
+            font: 12px SimSun;
+        }
+        footer p:nth-child(1)
+        {
+            float: left;
+            margin-left: 90px;
+            margin-top: 27px;
+        }
+        footer p:nth-child(2)
+        {
+            float: right;
+            margin-right: 40px;
+            margin-top: 30px;
+        }
+        footer a
+        {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <header>
+        <div class="logo">
+            <img src="./images/book.png">
+            新世界
+            <span id="top"></span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">最新活动</a></li>
+                <li><a href="#">项目介绍</a></li>
+                <li><a href="#">爱心社区</a></li>
+                <li><a href="#">关于我们</a></li>
+                <li class="login">
+                    <a href="#">
+                        <img src="./images/login.png">
+                        <span>登录</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main">
+        <div class="banner">
+            <p>Time of new life</p>
+            <p>新时代，年轻的人们让我们一起体验新生活，享受新生活</p>
+            <p><a href="#">开始体验</a></p>
+
+        </div>
+        <div class="feature">
+            <div>
+                <figure><img src="./images/circle.png"></figure>
+                <p>打造全新世界观，让你更爱你的生活</p><hr>
+            </div>
+            <div>
+                <figure><img src="./images/flag.png"></figure>
+                <p>丰富多彩的公益活动，发挥新世界的主人公意识</p><hr>
+            </div>
+            <div>
+                <figure><img src="./images/flower.png"></figure>
+                <p>时尚的新理念，超前体验未知的生活</p><hr>
+            </div>
+            <div>
+                <figure><img src="./images/square.png"></figure>
+                <p>完美的培养机制，培养你全新的世界观</p>
+            </div>
+        </div>
+        <div class="about">
+            <figure><img src="./images/logo.png"></figure>
+            <p>关于新世界，你不知道的还有什么？</p>
+        </div>
+        <div class="search">
+            <p>查找新世界城市活动信息</p>
+            <p></p>
+            <p>每个城市的有不同的活动信息，请自主查询您所需要了解的城市</p>
+            <form action="">
+                <select name="country">
+                    <option value="china">中国</option>
+                </select>
+                <select name="province">
+                    <option value="beijing">北京市</option>
+                    <option value="tianjin">天津市</option>
+                    <option value="hebei">河北省</option>
+                    <option value="shanxi">陕西省</option>
+                    <option value="neimenggu">内蒙古自治区</option>
+                    <option value="liaoning">辽宁省</option>
+                </select>
+                <select name="city">
+                    <option value="beijing">北京</option>
+                    <option value="shanghai">上海</option>
+                    <option value="guangzhou">广州</option>
+                    <option value="shenzhen">深圳</option>
+                </select>
+                <input type="submit" value="搜索">
+            </form>
+        </div>
+        <div class="activity">
+            <div>
+                <figure><img src="./images/beijing.png"></figure>
+                <p class="city">北京活动</p>
+                <p>新社区大联盟</p>
+            </div>
+            <div>
+                <p class="shanghai">上海活动</p>
+                <p>夜上海新景观探索</p>
+                <figure><img src="./images/shanghai.png"></figure>
+            </div>
+            <div>
+                <figure><img src="./images/shenzhen.png"></figure>
+                <p class="city">深圳活动</p>
+                <p>全新海岸线观点站</p>
+            </div>
+            <div>
+                <figure><img src="./images/hk.png"></figure>
+                <p class="city">香港活动</p>
+                <p>奢侈消费大派送</p>
+            </div>
+        </div>
+        <div class="new">
+            <div class="foot">
+                <div class="world">
+                <p>新世界</p>
+                <p>TIME</p>
+                <p>@新世界 - 北京</p>
+                <p>2016.04.01</p>
+                </div>
+            </div>
+            <div class="tab">
+                <div class="box">
+                    <div id="one">
+                            <p>新世界/<span>01</span></p>
+                            <p>新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界</p>
+                            <p><a href="#">更多详情</a></p>
+                    </div>
+                    <div id="two">
+                            <p>新世界/<span>02</span></p>
+                            <p>新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界</p>
+                            <p><a href="#">更多详情</a></p>
+                    </div>
+                    <div id="three">
+                            <p>新世界/<span>03</span></p>
+                            <p>新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界</p>
+                            <p><a href="#">更多详情</a></p>
+                    </div>
+                </div>
+                <div class="anchor">
+                    <a href="#one"></a>
+                    <a href="#two"></a>
+                    <a href="#three"></a>
+                </div>
+            </div>
+            <div class="more">
+                <div class="left">
+                    <div>
+                    <p>新时代</p>
+                    <p>关于爱生活的我们</p>
+                    <p></p>
+                    <p><a href="#">查看更多</a></p>
+                </div>
+                </div>
+                <div class="right">
+                    <div>
+                    <p>新时代</p>
+                    <p>关于爱生活的我们</p>
+                    <p></p>
+                    <p><a href="#">查看更多</a></p>
+                </div>
+                </div>
+                <div class="img"></div>                
+            </div>  
+        </div>
+        <div class="join">
+            <div class="joinus">
+                <p>成为我们的志愿者</p>
+                <div></div>
+                <p>新世界的大家庭需要每一个爱生活的人加入，如果你够年轻，有梦想，有激情 那就不要犹豫，快来加入我们，成为改变所有人生活的人</p>
+           </div>
+            <div class="provision">
+                <div>
+                    <div class="volunteer">新世界志愿者协议</div>
+                    <p>加入新世界志愿者的人员必须遵守中华人民共和国的相关法律法规，并且本着平等自愿的原则......</p>
+                    <p class="more-pro"><img src="./images/down.png" alt=""> more</p>
+                </div>
+                <div>
+                    <div class="volunteer">新世界志愿者权利</div>
+                    <p>新世界志愿者享受新世界内部所有资源共享的权利，并且享受所在新世界活动的优先参与资格......</p>
+                    <p class="more-pro"><img src="./images/down.png" alt=""> more</p>
+                </div>
+                <div>
+                    <div class="more-bottom">更多条款</div>
+                    <p class="more-pro"><img src="./images/down.png" alt=""> more</p>
+                </div>
+            </div>
+            <form action="">
+                <input type="text" name="name" placeholder="姓名：">
+                <input type="text" name="age" placeholder="年龄：">
+                <input type="text" name="number" placeholder="联系方式：">
+                <input type="text" name="address" placeholder="联系地址：">
+                <textarea name="content" placeholder="请简单描述您梦想的生活："></textarea>
+                <button>提交</button>
+            </form>
+        </div>
+    </div>
+    <div class="contact-us">
+        <div>
+        <p>联系我们</p>
+        <p>为了更好的获取我们最新的产品资讯，您可以留下您的电子邮箱快速订阅我们的产品资讯
+            <br>也可以通过以下方式关注我们动态
+        </p>
+        <input type="text" name="email" placeholder="someone@email.com">
+        <button>提交</button>
+        <figure>
+            <img src="./images/qq.png">
+            <img src="./images/weibo.png">
+            <img src="./images/twitter.png">
+            <img src="./images/planet.png" >
+            
+       </figure>
+       </div>
+    </div>
+    <footer>
+        <p>@2016新世界</p>
+        <p><a href="#top">back to top</a></p>
+    </footer>
+    </div>
+</body>
+</html>

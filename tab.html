@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡切换</title>
+    <style>
+        .box
+        {
+            width: 200px;
+            height: 100px;
+            border: 1px solid #ddd;
+            overflow: hidden;
+        }
+        .box p
+        {
+            width: 200px;
+            height: 100px;
+            line-height: 100px;
+            font-size: 80px;
+            background: #ddd;
+            text-align: center; 
+        }
+        .anchor a
+        {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #ccc;
+            text-decoration: none; 
+            text-align: center;
+        }
+        a:hover,a:active
+        {
+            background: #eee;
+            color: #345;
+        }
+        
+         .tab-box input
+        {
+            display: none;
+        }
+        .tab-title label
+        {
+           display: inline-block;
+           text-align: center;
+           width: 100px;
+           background-color: #0064cd;
+           color: #fff;
+           font-size: 18px;
+           line-height: 2;
+        }
+        .tab-content
+        {
+            font-size: 14px;
+            width: 352px;
+            height: 200px;
+            margin-top: 5px;
+            border: solid 1px slategray;
+            display: none;
+        }
+        #tab1:checked ~ .tab-contents .tab-content:nth-of-type(1),
+        #tab2:checked ~ .tab-contents .tab-content:nth-of-type(2),
+        #tab3:checked ~ .tab-contents .tab-content:nth-of-type(3)
+        {
+            display: block;
+        }
+        #tab1:checked ~ .tab-title label:nth-of-type(1) ,
+        #tab2:checked ~ .tab-title label:nth-of-type(2),
+        #tab3:checked ~ .tab-title label:nth-of-type(3) 
+        {
+            background-color: #88c846;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        <p id="one">1</p>
+        <p id="two">2</p>
+        <p id="three">3</p>
+        <p id="four">4</p>
+    </div>
+    <div class="anchor">
+        <a href="#one">1</a>
+        <a href="#two">2</a>
+        <a href="#three">3</a>
+        <a href="#four">4</a>
+    </div>
+    <div class="tab-box">
+        <input type="radio" name="demo" id="tab1" checked>
+        <input type="radio" name="demo" id="tab2">
+        <input type="radio" name="demo" id="tab3">
+        <div class="tab-title">
+            <label for="tab1">
+                tab1
+            </label>
+            <label for="tab2">
+                tab2
+            </label>
+            <label for="tab3">
+                tab3
+            </label>
+        </div>
+        <div class="tab-contents">
+            <div class="tab-content">
+                content 1 显示
+            </div>
+            <div class="tab-content">
+                content 2 显示
+            </div>
+            <div class="tab-content">
+                content 3 显示
+            </div>
+        </div>
+    </div>
+</body>
+</html>

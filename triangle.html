@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制三角形</title>
+    <style>
+        .one
+         {  
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 100px solid red;
+         }
+         .two 
+         {
+            border: 50px solid transparent;
+            border-left-color: #f00;
+            width: 0;
+            height: 0;
+         }
+         #a
+         {
+           width: 0;
+           height: 0;
+           border: 50px solid transparent;
+           border-top-color: #000000;
+          /*position: relative;*/
+         }
+         #b
+        {
+           width: 0;
+           height: 0;
+           border: 40px solid transparent;
+           border-top-color: #fff;
+           /* position: absolute;*/
+           margin-top: -50px;
+           margin-left: -40px;
+        }
+        .tag
+        {
+           width:300px;
+           height:100px;
+           border:5px solid #09F;
+           position:relative;
+           background-color:#FFF;
+        }
+        .tag:before,.tag:after
+        {
+            content:"";display:block;
+            position:absolute; bottom:-40px;
+            left:100px;
+            border: 20px solid transparent;
+            border-top-color:#09F;
+        }
+        .tag:after
+        {
+            bottom:-33px;
+            border-color:#FFF transparent transparent;
+        } 
+        #demo15
+        {
+            position: relative;
+        }
+          #demo15:after
+        {
+            border: 10px solid transparent;
+            border-left: 10px solid #f00;
+            width: 0;
+            height: 0;
+            position: absolute;
+            content: ' ';
+        }
+        #demo16
+        {
+            position: relative;
+        }
+        #demo16:after, #demo16:before 
+        {
+            border: 10px solid transparent;
+            border-left: 10px solid #fff;
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 0;
+            right: -20px;
+            content: ' ';
+        }
+        #demo16:before 
+        {
+            border-left-color: #f00;
+            right: -21px;
+        }
+    </style>
+</head>
+<body>
+    <div class="one"></div>
+    <hr>
+    <div class="two"></div>
+    <hr>
+    <div id="a">
+        <div id="b"></div>
+    </div>
+    <hr>
+    <div class="tag">
+        css3气泡框
+    </div>
+    <hr>
+    <span id="demo15">文字内容</span>
+    <hr>
+    <span id="demo16">文字内容</span>
+</body>
+</html>
